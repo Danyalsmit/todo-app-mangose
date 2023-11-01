@@ -33,7 +33,7 @@ app.put("/update/:id",(req,res)=>{
 
 app.delete("/delete/:id",(req,res)=>{
   const { id }=req.params;
-  TodoModel.findByIdAndDelete({_id:id})
+  TodoModel.findByIdAndUpdate({_id:id})
   .then((result) => {
     res.status(201).json(result); 
   })
